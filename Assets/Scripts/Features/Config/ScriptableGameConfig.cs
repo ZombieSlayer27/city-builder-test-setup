@@ -6,11 +6,11 @@ namespace Features.Config
     [CreateAssetMenu(menuName = "CityBuilder/Game Config")]
     public class ScriptableGameConfig : ScriptableObject, IGameConfig
     {
-        [SerializeField] private ProductionData _productionData;
+        [SerializeField] private Productions productions;
 
         /// <summary>
         /// Production Data
         /// </summary>
-        public ProductionData ProductionData => _productionData;
+        public Productions Productions => productions;
     }
 }

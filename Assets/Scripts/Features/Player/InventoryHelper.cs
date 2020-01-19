@@ -11,7 +11,7 @@ namespace Features.Player
             if (configContext.hasGameConfig && gameContext.isPlayer &&
                 gameContext.playerEntity.hasPlayerInventory)
             {
-                var config = configContext.gameConfigEntity.gameConfig.value.ProductionData.Config;
+                var config = configContext.gameConfigEntity.gameConfig.value.Productions.Config;
                 var productionConfig = config.SingleOrDefault(x => x.Id.ToString() == mapObjectId);
                 var inventory = gameContext.playerEntity.playerInventory.Value.resources;
                 if (productionConfig != null)

@@ -5,6 +5,6 @@ namespace Features.Config
     [Config, Unique, ComponentName("GameConfig")]
     public interface IGameConfig
     {
-        ProductionData ProductionData { get; }
+        Productions Productions { get; }
     }
 }

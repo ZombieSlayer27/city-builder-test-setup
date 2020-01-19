@@ -11,9 +11,9 @@ namespace Features.Systems
             Add(new WoodPlacementProcessSystem(contexts));
             Add(new SteelPlacementProcessSystem(contexts));
 
-            Add(new ResidenceProductionSystem(contexts));
-            Add(new WoodProductionSystem(contexts));
-            Add(new SteelProductionSystem(contexts));
+            Add(new ConstructionProcessSystem(contexts));
+            Add(new ProductionStartSystem(contexts));
+            Add(new ProductionProcessSystem(contexts));
         }
     }
 }

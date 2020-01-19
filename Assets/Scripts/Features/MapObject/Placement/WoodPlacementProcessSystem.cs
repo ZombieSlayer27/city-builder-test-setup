@@ -25,8 +25,22 @@ namespace Features.MapObject.Placement
         {
             foreach (var gameEntity in entities)
             {
-                Debug.Log($"{gameEntity.transactionMapObject.MapObject} purchased");
-                gameEntity.isDestroyed = true;
+                var isConfigAvailable = ConfigHelper.TryGetConfig(gameEntity.transactionMapObject.MapObject.ToString(),
+                    out var config);
+
+                if (isConfigAvailable)
+                {
+                    var productionEntity = _gameContext.CreateEntity();
+                    var production = new ProductionData
+                    {
+                        MapObject = config.MapObject,
+                        TimeLeft = config.ProductionDuration,
+                        IsInProduction = false,
+                        IsAuto = config.Auto
+                    };
+                    productionEntity.AddProduction(production);
+                    productionEntity.AddConstruction(config.ProductionDelay);
+                }
             }
         }
     }

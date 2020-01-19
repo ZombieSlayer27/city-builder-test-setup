@@ -26,8 +26,6 @@ namespace Features.MapObject.Placement
             foreach (var gameEntity in entities)
             {
                 Debug.Log($"{gameEntity.transactionMapObject.MapObject} purchased");
-
-                gameEntity.isDestroyed = true;
             }
         }
     }

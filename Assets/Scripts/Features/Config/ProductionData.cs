@@ -1,18 +1,11 @@
 namespace Features.Config
 {
-    using System;
-    using System.Collections.Generic;
-    using UnityEngine;
-
-    [Serializable]
-    public class ProductionData
+    public sealed class ProductionData
     {
-        [SerializeField]
-        private List<ProductionConfig> config;
-
-        /// <summary>
-        /// Collection of production Configs
-        /// </summary>
-        public List<ProductionConfig> Config => config;
+        public MapObject MapObject;
+        public string ProductionId;
+        public float TimeLeft;
+        public bool IsInProduction;
+        public bool IsAuto;
     }
 }

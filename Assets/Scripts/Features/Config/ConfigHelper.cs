@@ -11,7 +11,7 @@ namespace Features.Config
             var configContext = Contexts.sharedInstance.config;
             if (configContext.hasGameConfig)
             {
-                var config = configContext.gameConfigEntity.gameConfig.value.ProductionData.Config;
+                var config = configContext.gameConfigEntity.gameConfig.value.Productions.Config;
                 productionConfig = config.SingleOrDefault(x => x.Id.ToString() == id);
                 if (productionConfig != null)
                 {

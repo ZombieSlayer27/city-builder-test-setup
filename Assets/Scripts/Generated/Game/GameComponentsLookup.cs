@@ -10,37 +10,38 @@ public static class GameComponentsLookup {
 
     public const int AnyResourceUpdateListener = 0;
     public const int DestroyedListener = 1;
-    public const int Destroyed = 2;
-    public const int InventoryUpdate = 3;
-    public const int MapObjectPlacement = 4;
-    public const int Player = 5;
-    public const int PlayerInventory = 6;
-    public const int ResidenceProduction = 7;
-    public const int ResourceUpdate = 8;
-    public const int SteelProduction = 9;
-    public const int TransactionMapObject = 10;
-    public const int TransactionRequest = 11;
-    public const int TransactionValidated = 12;
-    public const int TransactionBegin = 13;
-    public const int Transaction = 14;
-    public const int TransactionDone = 15;
-    public const int TransactionFailed = 16;
-    public const int TransactionSuccess = 17;
-    public const int WoodProduction = 18;
+    public const int Construction = 2;
+    public const int ConstructionDone = 3;
+    public const int Destroyed = 4;
+    public const int InventoryUpdate = 5;
+    public const int MapObjectPlacement = 6;
+    public const int Player = 7;
+    public const int PlayerInventory = 8;
+    public const int Production = 9;
+    public const int ResourceUpdate = 10;
+    public const int TransactionMapObject = 11;
+    public const int TransactionRequest = 12;
+    public const int TransactionValidated = 13;
+    public const int TransactionBegin = 14;
+    public const int Transaction = 15;
+    public const int TransactionDone = 16;
+    public const int TransactionFailed = 17;
+    public const int TransactionSuccess = 18;
 
     public const int TotalComponents = 19;
 
     public static readonly string[] componentNames = {
         "AnyResourceUpdateListener",
         "DestroyedListener",
+        "Construction",
+        "ConstructionDone",
         "Destroyed",
         "InventoryUpdate",
         "MapObjectPlacement",
         "Player",
         "PlayerInventory",
-        "ResidenceProduction",
+        "Production",
         "ResourceUpdate",
-        "SteelProduction",
         "TransactionMapObject",
         "TransactionRequest",
         "TransactionValidated",
@@ -48,21 +49,21 @@ public static class GameComponentsLookup {
         "Transaction",
         "TransactionDone",
         "TransactionFailed",
-        "TransactionSuccess",
-        "WoodProduction"
+        "TransactionSuccess"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(AnyResourceUpdateListenerComponent),
         typeof(DestroyedListenerComponent),
+        typeof(Features.Components.ConstructionComponent),
+        typeof(Features.Components.ConstructionDoneComponent),
         typeof(Features.Components.DestroyedComponent),
         typeof(Features.Components.InventoryUpdateComponent),
         typeof(Features.Components.MapObjectPlacementComponent),
         typeof(Features.Components.PlayerComponent),
         typeof(Features.Components.PlayerInventoryComponent),
-        typeof(Features.Components.ResidenceProductionComponent),
+        typeof(Features.Components.ProductionComponent),
         typeof(Features.Components.ResourceUpdateComponent),
-        typeof(Features.Components.SteelProductionComponent),
         typeof(Features.Components.Transaction.TransactionMapObjectComponent),
         typeof(Features.Components.Transaction.TransactionRequestComponent),
         typeof(Features.Components.Transaction.TransactionValidatedComponent),
@@ -70,7 +71,6 @@ public static class GameComponentsLookup {
         typeof(Features.Components.TransactionComponent),
         typeof(Features.Components.TransactionDoneComponent),
         typeof(Features.Components.TransactionFailedComponent),
-        typeof(Features.Components.TransactionSuccessComponent),
-        typeof(Features.Components.WoodProductionComponent)
+        typeof(Features.Components.TransactionSuccessComponent)
     };
 }

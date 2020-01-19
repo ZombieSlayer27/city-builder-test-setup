@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f9b656c9334f689620a432650748fa, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  _productionData:
+  productions:
     config:
     - id: Residence
       isAuto: 1
@@ -48,7 +48,7 @@ MonoBehaviour:
         resource: 1
     - id: Bench
       isAuto: 0
-      mapObject: 3
+      mapObject: 4
       productionResource: 0
       productionAmount: 0
       productionDelay: 0

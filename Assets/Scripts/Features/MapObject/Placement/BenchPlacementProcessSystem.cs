@@ -3,6 +3,7 @@ namespace Features.MapObject.Placement
     using System.Collections.Generic;
     using Config;
     using Entitas;
+    using UnityEditor;
     using UnityEngine;
 
     public class BenchPlacementProcessSystem : ReactiveSystem<GameEntity>
@@ -28,8 +29,6 @@ namespace Features.MapObject.Placement
             foreach (var gameEntity in entities)
             {
                 Debug.Log($"{gameEntity.transactionMapObject.MapObject} purchased");
-
-                gameEntity.isDestroyed = true;
             }
         }
     }
