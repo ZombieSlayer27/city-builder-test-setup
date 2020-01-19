@@ -8,15 +8,33 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
+    public const int DestroyedListener = 0;
+    public const int DecorationInit = 1;
+    public const int Destroyed = 2;
+    public const int ProductionInit = 3;
+    public const int ResidenceProduction = 4;
+    public const int SteelProduction = 5;
+    public const int WoodProduction = 6;
 
-
-    public const int TotalComponents = 0;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
-
+        "DestroyedListener",
+        "DecorationInit",
+        "Destroyed",
+        "ProductionInit",
+        "ResidenceProduction",
+        "SteelProduction",
+        "WoodProduction"
     };
 
     public static readonly System.Type[] componentTypes = {
-
+        typeof(DestroyedListenerComponent),
+        typeof(Features.Components.DecorationInitComponent),
+        typeof(Features.Components.DestroyedComponent),
+        typeof(Features.Components.ProductionInitComponent),
+        typeof(Features.Components.ResidenceProductionComponent),
+        typeof(Features.Components.SteelProductionComponent),
+        typeof(Features.Components.WoodProductionComponent)
     };
 }
