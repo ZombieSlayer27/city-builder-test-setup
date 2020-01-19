@@ -26,7 +26,7 @@ MonoBehaviour:
         resource: 3
     - id: Wood
       isAuto: 0
-      mapObject: 1
+      mapObject: 2
       productionResource: 1
       productionAmount: 50
       productionDelay: 10
@@ -36,7 +36,7 @@ MonoBehaviour:
         resource: 3
     - id: Steel
       isAuto: 0
-      mapObject: 1
+      mapObject: 3
       productionResource: 2
       productionAmount: 50
       productionDelay: 10
@@ -44,11 +44,11 @@ MonoBehaviour:
       productionCostData:
       - amount: 150
         resource: 3
-      - amount: 150
+      - amount: 100
         resource: 1
     - id: Bench
       isAuto: 0
-      mapObject: 2
+      mapObject: 3
       productionResource: 0
       productionAmount: 0
       productionDelay: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
         resource: 2
     - id: Tree
       isAuto: 0
-      mapObject: 0
+      mapObject: 5
       productionResource: 0
       productionAmount: 0
       productionDelay: 0

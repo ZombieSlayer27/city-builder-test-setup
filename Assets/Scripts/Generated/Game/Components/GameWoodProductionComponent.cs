@@ -14,20 +14,20 @@ public partial class GameEntity {
     public void AddWoodProduction(bool newIsInProduction, float newTimeLeft, Features.Config.ProductionBuilding newBuilding, string newProductionId) {
         var index = GameComponentsLookup.WoodProduction;
         var component = (Features.Components.WoodProductionComponent)CreateComponent(index, typeof(Features.Components.WoodProductionComponent));
-        component.isInProduction = newIsInProduction;
-        component.timeLeft = newTimeLeft;
-        component.building = newBuilding;
-        component.productionId = newProductionId;
+        component.IsInProduction = newIsInProduction;
+        component.TimeLeft = newTimeLeft;
+        component.Building = newBuilding;
+        component.ProductionId = newProductionId;
         AddComponent(index, component);
     }
 
     public void ReplaceWoodProduction(bool newIsInProduction, float newTimeLeft, Features.Config.ProductionBuilding newBuilding, string newProductionId) {
         var index = GameComponentsLookup.WoodProduction;
         var component = (Features.Components.WoodProductionComponent)CreateComponent(index, typeof(Features.Components.WoodProductionComponent));
-        component.isInProduction = newIsInProduction;
-        component.timeLeft = newTimeLeft;
-        component.building = newBuilding;
-        component.productionId = newProductionId;
+        component.IsInProduction = newIsInProduction;
+        component.TimeLeft = newTimeLeft;
+        component.Building = newBuilding;
+        component.ProductionId = newProductionId;
         ReplaceComponent(index, component);
     }
 

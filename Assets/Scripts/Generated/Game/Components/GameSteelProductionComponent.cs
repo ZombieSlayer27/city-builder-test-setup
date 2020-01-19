@@ -14,20 +14,20 @@ public partial class GameEntity {
     public void AddSteelProduction(bool newIsInProduction, float newTimeLeft, Features.Config.ProductionBuilding newBuilding, string newProductionId) {
         var index = GameComponentsLookup.SteelProduction;
         var component = (Features.Components.SteelProductionComponent)CreateComponent(index, typeof(Features.Components.SteelProductionComponent));
-        component.isInProduction = newIsInProduction;
-        component.timeLeft = newTimeLeft;
-        component.building = newBuilding;
-        component.productionId = newProductionId;
+        component.IsInProduction = newIsInProduction;
+        component.TimeLeft = newTimeLeft;
+        component.Building = newBuilding;
+        component.ProductionId = newProductionId;
         AddComponent(index, component);
     }
 
     public void ReplaceSteelProduction(bool newIsInProduction, float newTimeLeft, Features.Config.ProductionBuilding newBuilding, string newProductionId) {
         var index = GameComponentsLookup.SteelProduction;
         var component = (Features.Components.SteelProductionComponent)CreateComponent(index, typeof(Features.Components.SteelProductionComponent));
-        component.isInProduction = newIsInProduction;
-        component.timeLeft = newTimeLeft;
-        component.building = newBuilding;
-        component.productionId = newProductionId;
+        component.IsInProduction = newIsInProduction;
+        component.TimeLeft = newTimeLeft;
+        component.Building = newBuilding;
+        component.ProductionId = newProductionId;
         ReplaceComponent(index, component);
     }
 

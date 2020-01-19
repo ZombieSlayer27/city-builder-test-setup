@@ -9,38 +9,34 @@ namespace Features.Game
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                StartProduction(MapObject.Building, ProductionBuilding.Residence);
+                StartProduction(MapObject.Residence);
             }
+
             if (Input.GetKeyDown(KeyCode.W))
             {
-                StartProduction(MapObject.Building, ProductionBuilding.Wood);
+                StartProduction(MapObject.Wood);
             }
+
             if (Input.GetKeyDown(KeyCode.E))
             {
-                StartProduction(MapObject.Building, ProductionBuilding.Steel);
+                StartProduction(MapObject.Steel);
             }
+
             if (Input.GetKeyDown(KeyCode.R))
             {
-                StartProduction(MapObject.Decoration, decoration:DecorationBuilding.Bench);
+                StartProduction(MapObject.Bench);
             }
+
             if (Input.GetKeyDown(KeyCode.T))
             {
-                StartProduction(MapObject.Decoration, decoration:DecorationBuilding.Tree);
+                StartProduction(MapObject.Tree);
             }
         }
 
-        private void StartProduction(MapObject mapObject, ProductionBuilding building = ProductionBuilding.None, DecorationBuilding decoration = DecorationBuilding.None)
+        private void StartProduction(MapObject mapObject)
         {
-            if (building != ProductionBuilding.None)
-            {
-                var gameEntity = Contexts.sharedInstance.game.CreateEntity();
-                gameEntity.AddProductionInit(building);
-            }
-            if (decoration != DecorationBuilding.None)
-            {
-                var gameEntity = Contexts.sharedInstance.game.CreateEntity();
-                gameEntity.AddDecorationInit(decoration);
-            }
+            var gameEntity = Contexts.sharedInstance.game.CreateEntity();
+            gameEntity.AddMapObjectPlacement(mapObject);
         }
     }
 }

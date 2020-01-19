@@ -1,6 +1,6 @@
 namespace Features.Systems
 {
-    using Production;
+    using MapObject.Placement;
 
     public sealed class DecorationSystems : Feature
     {

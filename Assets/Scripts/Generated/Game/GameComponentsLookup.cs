@@ -8,33 +8,69 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int DestroyedListener = 0;
-    public const int DecorationInit = 1;
+    public const int AnyResourceUpdateListener = 0;
+    public const int DestroyedListener = 1;
     public const int Destroyed = 2;
-    public const int ProductionInit = 3;
-    public const int ResidenceProduction = 4;
-    public const int SteelProduction = 5;
-    public const int WoodProduction = 6;
+    public const int InventoryUpdate = 3;
+    public const int MapObjectPlacement = 4;
+    public const int Player = 5;
+    public const int PlayerInventory = 6;
+    public const int ResidenceProduction = 7;
+    public const int ResourceUpdate = 8;
+    public const int SteelProduction = 9;
+    public const int TransactionMapObject = 10;
+    public const int TransactionRequest = 11;
+    public const int TransactionValidated = 12;
+    public const int TransactionBegin = 13;
+    public const int Transaction = 14;
+    public const int TransactionDone = 15;
+    public const int TransactionFailed = 16;
+    public const int TransactionSuccess = 17;
+    public const int WoodProduction = 18;
 
-    public const int TotalComponents = 7;
+    public const int TotalComponents = 19;
 
     public static readonly string[] componentNames = {
+        "AnyResourceUpdateListener",
         "DestroyedListener",
-        "DecorationInit",
         "Destroyed",
-        "ProductionInit",
+        "InventoryUpdate",
+        "MapObjectPlacement",
+        "Player",
+        "PlayerInventory",
         "ResidenceProduction",
+        "ResourceUpdate",
         "SteelProduction",
+        "TransactionMapObject",
+        "TransactionRequest",
+        "TransactionValidated",
+        "TransactionBegin",
+        "Transaction",
+        "TransactionDone",
+        "TransactionFailed",
+        "TransactionSuccess",
         "WoodProduction"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AnyResourceUpdateListenerComponent),
         typeof(DestroyedListenerComponent),
-        typeof(Features.Components.DecorationInitComponent),
         typeof(Features.Components.DestroyedComponent),
-        typeof(Features.Components.ProductionInitComponent),
+        typeof(Features.Components.InventoryUpdateComponent),
+        typeof(Features.Components.MapObjectPlacementComponent),
+        typeof(Features.Components.PlayerComponent),
+        typeof(Features.Components.PlayerInventoryComponent),
         typeof(Features.Components.ResidenceProductionComponent),
+        typeof(Features.Components.ResourceUpdateComponent),
         typeof(Features.Components.SteelProductionComponent),
+        typeof(Features.Components.Transaction.TransactionMapObjectComponent),
+        typeof(Features.Components.Transaction.TransactionRequestComponent),
+        typeof(Features.Components.Transaction.TransactionValidatedComponent),
+        typeof(Features.Components.TransactionBeginComponent),
+        typeof(Features.Components.TransactionComponent),
+        typeof(Features.Components.TransactionDoneComponent),
+        typeof(Features.Components.TransactionFailedComponent),
+        typeof(Features.Components.TransactionSuccessComponent),
         typeof(Features.Components.WoodProductionComponent)
     };
 }

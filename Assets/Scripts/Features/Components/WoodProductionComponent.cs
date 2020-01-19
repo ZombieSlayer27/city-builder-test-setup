@@ -7,9 +7,9 @@ namespace Features.Components
     [Game]
     public class WoodProductionComponent : IComponent
     {
-        public bool isInProduction;
-        public float timeLeft;
-        public ProductionBuilding building;
-        public string productionId;
+        public bool IsInProduction;
+        public float TimeLeft;
+        public ProductionBuilding Building;
+        public string ProductionId;
     }
 }
