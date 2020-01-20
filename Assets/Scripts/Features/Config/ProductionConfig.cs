@@ -15,7 +15,9 @@ namespace Features.Config
         [SerializeField] private int productionDelay;
         [SerializeField] private int productionDuration;
         [SerializeField] private List<ResourceData> productionCostData;
-
+        [SerializeField] private GameObject mapObjectAsset;
+        [SerializeField] private Vector2 mapObjectSize;
+        
         /// <summary>
         /// Name of the Production Building
         /// </summary>
@@ -55,5 +57,15 @@ namespace Features.Config
         /// Resources required to produce
         /// </summary>
         public List<ResourceData> ProductionCostData => productionCostData;
+
+        /// <summary>
+        /// Asset reference to the Map Object
+        /// </summary>
+        public GameObject MapObjectAsset => mapObjectAsset;
+
+        /// <summary>
+        /// Map Object size on the grid
+        /// </summary>
+        public Vector2 MapObjectSize => mapObjectSize;
     }
 }

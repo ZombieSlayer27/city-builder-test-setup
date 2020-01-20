@@ -8,18 +8,18 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Features.Components.Transaction.TransactionValidatedComponent transactionValidatedComponent = new Features.Components.Transaction.TransactionValidatedComponent();
+    static readonly Features.Components.Transaction.TransactionValidateComponent transactionValidateComponent = new Features.Components.Transaction.TransactionValidateComponent();
 
-    public bool isTransactionValidated {
-        get { return HasComponent(GameComponentsLookup.TransactionValidated); }
+    public bool isTransactionValidate {
+        get { return HasComponent(GameComponentsLookup.TransactionValidate); }
         set {
-            if (value != isTransactionValidated) {
-                var index = GameComponentsLookup.TransactionValidated;
+            if (value != isTransactionValidate) {
+                var index = GameComponentsLookup.TransactionValidate;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : transactionValidatedComponent;
+                            : transactionValidateComponent;
 
                     AddComponent(index, component);
                 } else {
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherTransactionValidated;
+    static Entitas.IMatcher<GameEntity> _matcherTransactionValidate;
 
-    public static Entitas.IMatcher<GameEntity> TransactionValidated {
+    public static Entitas.IMatcher<GameEntity> TransactionValidate {
         get {
-            if (_matcherTransactionValidated == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.TransactionValidated);
+            if (_matcherTransactionValidate == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.TransactionValidate);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherTransactionValidated = matcher;
+                _matcherTransactionValidate = matcher;
             }
 
-            return _matcherTransactionValidated;
+            return _matcherTransactionValidate;
         }
     }
 }

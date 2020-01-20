@@ -80,8 +80,8 @@ namespace Features.UI
 
         private void OnBuildingSelected(MapObject mapObject)
         {
-            Debug.Log($"mapObject {mapObject}");
             buildingPopupContainer.SetActive(false);
+            Contexts.sharedInstance.game.ReplaceMapObjectPlacement(mapObject);
         }
     }
 }

@@ -15,22 +15,25 @@ public static class GameComponentsLookup {
     public const int ConstructionDone = 4;
     public const int Destroyed = 5;
     public const int GameMode = 6;
-    public const int InventoryUpdate = 7;
-    public const int MapObjectPlacement = 8;
-    public const int Player = 9;
-    public const int PlayerInventory = 10;
-    public const int Production = 11;
-    public const int ResourceUpdate = 12;
-    public const int TransactionMapObject = 13;
-    public const int TransactionRequest = 14;
-    public const int TransactionValidated = 15;
-    public const int TransactionBegin = 16;
-    public const int Transaction = 17;
-    public const int TransactionDone = 18;
-    public const int TransactionFailed = 19;
-    public const int TransactionSuccess = 20;
+    public const int Grid = 7;
+    public const int GridPosition = 8;
+    public const int InventoryUpdate = 9;
+    public const int MapObjectPlacement = 10;
+    public const int MapObjectPosition = 11;
+    public const int Player = 12;
+    public const int PlayerInventory = 13;
+    public const int Production = 14;
+    public const int ResourceUpdate = 15;
+    public const int TransactionMapObject = 16;
+    public const int TransactionRequest = 17;
+    public const int TransactionValidate = 18;
+    public const int TransactionBegin = 19;
+    public const int Transaction = 20;
+    public const int TransactionDone = 21;
+    public const int TransactionFailed = 22;
+    public const int TransactionSuccess = 23;
 
-    public const int TotalComponents = 21;
+    public const int TotalComponents = 24;
 
     public static readonly string[] componentNames = {
         "AnyGameModeListener",
@@ -40,15 +43,18 @@ public static class GameComponentsLookup {
         "ConstructionDone",
         "Destroyed",
         "GameMode",
+        "Grid",
+        "GridPosition",
         "InventoryUpdate",
         "MapObjectPlacement",
+        "MapObjectPosition",
         "Player",
         "PlayerInventory",
         "Production",
         "ResourceUpdate",
         "TransactionMapObject",
         "TransactionRequest",
-        "TransactionValidated",
+        "TransactionValidate",
         "TransactionBegin",
         "Transaction",
         "TransactionDone",
@@ -64,15 +70,18 @@ public static class GameComponentsLookup {
         typeof(Features.Components.ConstructionDoneComponent),
         typeof(Features.Components.DestroyedComponent),
         typeof(Features.Components.GameModeComponent),
+        typeof(Features.Components.GridComponent),
+        typeof(Features.Components.GridPosition),
         typeof(Features.Components.InventoryUpdateComponent),
         typeof(Features.Components.MapObjectPlacementComponent),
+        typeof(Features.Components.MapObjectPosition),
         typeof(Features.Components.PlayerComponent),
         typeof(Features.Components.PlayerInventoryComponent),
         typeof(Features.Components.ProductionComponent),
         typeof(Features.Components.ResourceUpdateComponent),
         typeof(Features.Components.Transaction.TransactionMapObjectComponent),
         typeof(Features.Components.Transaction.TransactionRequestComponent),
-        typeof(Features.Components.Transaction.TransactionValidatedComponent),
+        typeof(Features.Components.Transaction.TransactionValidateComponent),
         typeof(Features.Components.TransactionBeginComponent),
         typeof(Features.Components.TransactionComponent),
         typeof(Features.Components.TransactionDoneComponent),

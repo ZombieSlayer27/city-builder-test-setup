@@ -13,11 +13,10 @@ namespace Features.Transactions
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
-            context.CreateCollector(GameMatcher.TransactionBegin.Added());
+            context.CreateCollector(GameMatcher.TransactionValidate.Added());
 
         protected override bool Filter(GameEntity entity) => entity.isTransaction &&
                                                              !entity.isTransactionDone &&
-                                                             !entity.isTransactionValidated &&
                                                              entity.hasTransactionRequest;
 
         protected override void Execute(List<GameEntity> entities)
@@ -42,12 +41,12 @@ namespace Features.Transactions
 
                     if (requiredResourcesAmount > 0)
                     {
-                        entity.isTransactionValidated = true;
+                        entity.isTransactionValidate = true;
                         entity.isTransactionFailed = true;
                     }
                     else
                     {
-                        entity.isTransactionValidated = true;
+                        entity.isTransactionValidate = true;
                         entity.isTransactionSuccess = true;
                     }
                 }

@@ -8,6 +8,7 @@ namespace Features.Systems
     {
         public GameSystems(Contexts contexts)
         {
+            Add(new GameInitializeSystem(contexts));
             Add(new InputSystems(contexts));
             Add(new TransactionSystems(contexts));
             Add(new InventorySystems(contexts));

@@ -2,6 +2,7 @@ namespace Features.Input
 {
     using System.Collections.Generic;
     using Entitas;
+    using MapObject;
     using UnityEngine;
 
     public sealed class InputProcessSystem : ReactiveSystem<InputEntity>
@@ -19,8 +20,9 @@ namespace Features.Input
         protected override void Execute(List<InputEntity> entities)
         {
             var inputEntity = entities.SingleEntity();
-            var input = inputEntity.input;   
-            Debug.Log(input.Value);
+            var input = inputEntity.input;
+
+            //Debug.Log($"world Pos : {input.Value} gridPos:  {MapObjectHelper.ToGridPosition(input.Value)}");
         }
     }
 }

@@ -4,7 +4,7 @@ namespace Features.Config
 
     public static class ConfigHelper
     {
-        public static bool TryGetConfig(string id, out ProductionConfig productionConfig)
+        public static bool TryGetConfig(MapObject id, out ProductionConfig productionConfig)
         {
             productionConfig = null;
 
@@ -12,7 +12,7 @@ namespace Features.Config
             if (configContext.hasGameConfig)
             {
                 var config = configContext.gameConfigEntity.gameConfig.value.Productions.Config;
-                productionConfig = config.SingleOrDefault(x => x.Id.ToString() == id);
+                productionConfig = config.SingleOrDefault(x => x.MapObject == id);
                 if (productionConfig != null)
                 {
                     return true;

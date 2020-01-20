@@ -22,7 +22,7 @@ namespace Features.MapObject.Production
                 var production = productionEntity.production.Value;
                 if (production.IsInProduction && productionEntity.isConstructionDone)
                 {
-                    var isConfigAvailable = ConfigHelper.TryGetConfig(production.MapObject.ToString(), out var config);
+                    var isConfigAvailable = ConfigHelper.TryGetConfig(production.MapObject, out var config);
                     if (isConfigAvailable)
                     {
                         if (production.TimeLeft > 0)

@@ -26,6 +26,13 @@ namespace Features.MapObject.Placement
             foreach (var gameEntity in entities)
             {
                 Debug.Log($"{gameEntity.transactionMapObject.MapObject} purchased");
+                var isConfigAvailable = ConfigHelper.TryGetConfig(gameEntity.transactionMapObject.MapObject,
+                    out var config);
+                if (isConfigAvailable)
+                {
+                    var asset = MapObjectHelper.GetMapObject(config);
+                    asset.transform.position = new Vector3(gameEntity.mapObjectPosition.Value.x, 0f, gameEntity.mapObjectPosition.Value.z);
+                }
             }
         }
     }

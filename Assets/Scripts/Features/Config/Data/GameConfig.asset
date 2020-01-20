@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f9b656c9334f689620a432650748fa, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
+  gridSize: 12
+  gridScaleFactor: 10
   productions:
     config:
     - id: Residence
@@ -24,6 +26,9 @@ MonoBehaviour:
       productionCostData:
       - amount: 100
         resource: 3
+      mapObjectAsset: {fileID: 5544763611581036915, guid: 16515dd91ebb84b3a8f20dc29c23264f,
+        type: 3}
+      mapObjectSize: {x: 3, y: 3}
     - id: Wood
       isAuto: 0
       mapObject: 2
@@ -34,6 +39,9 @@ MonoBehaviour:
       productionCostData:
       - amount: 150
         resource: 3
+      mapObjectAsset: {fileID: 6837885162318440743, guid: add0de247d5e34d7a9fd680d17f7d65a,
+        type: 3}
+      mapObjectSize: {x: 3, y: 2}
     - id: Steel
       isAuto: 0
       mapObject: 3
@@ -46,6 +54,9 @@ MonoBehaviour:
         resource: 3
       - amount: 100
         resource: 1
+      mapObjectAsset: {fileID: 1134808359842559631, guid: 8cb539507e53844abbc6cac81da2fb2a,
+        type: 3}
+      mapObjectSize: {x: 2, y: 2}
     - id: Bench
       isAuto: 0
       mapObject: 4
@@ -58,6 +69,9 @@ MonoBehaviour:
         resource: 3
       - amount: 50
         resource: 2
+      mapObjectAsset: {fileID: 5393388301532982471, guid: affe66bd566d942f78badd68c1a973d1,
+        type: 3}
+      mapObjectSize: {x: 1, y: 1}
     - id: Tree
       isAuto: 0
       mapObject: 5
@@ -70,3 +84,6 @@ MonoBehaviour:
         resource: 3
       - amount: 200
         resource: 1
+      mapObjectAsset: {fileID: 7051956560768922039, guid: ea2d4810dcf0148cbbdf9f05d44ddfe4,
+        type: 3}
+      mapObjectSize: {x: 2, y: 2}

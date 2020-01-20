@@ -6,6 +6,7 @@ namespace Features.Input
         {
             Add(new InputSystem(contexts));
             Add(new InputProcessSystem(contexts));
+            Add(new MapObjectInputProcessSystem(contexts));
         }
     }
 }

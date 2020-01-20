@@ -1,6 +1,7 @@
 namespace Features.Transactions
 {
     using System.Collections.Generic;
+    using Config;
     using Entitas;
 
     public sealed class TransactionProcessSystem : ReactiveSystem<GameEntity>
@@ -13,9 +14,9 @@ namespace Features.Transactions
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
-            context.CreateCollector(GameMatcher.TransactionValidated);
+            context.CreateCollector(GameMatcher.TransactionSuccess);
 
-        protected override bool Filter(GameEntity entity) => entity.isTransactionValidated &&
+        protected override bool Filter(GameEntity entity) => entity.isTransactionValidate &&
                                                              entity.isTransaction &&
                                                              !entity.isTransactionDone &&
                                                              entity.isTransactionSuccess &&

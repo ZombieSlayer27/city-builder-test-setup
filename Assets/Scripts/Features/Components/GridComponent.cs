@@ -1,12 +1,11 @@
 namespace Features.Components
 {
-    using Config;
     using Entitas;
     using Entitas.CodeGeneration.Attributes;
 
     [Game, Unique]
-    public sealed class MapObjectPlacementComponent :IComponent
+    public sealed class GridComponent : IComponent
     {
-        public MapObject Value;
+        public bool[,] Value;
     }
 }

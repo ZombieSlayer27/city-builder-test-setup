@@ -18,9 +18,14 @@ namespace Features.Input
         {
             if (Input.GetMouseButtonDown(0))
             {
-                var mouseWorldPos = _camera.ScreenToWorldPoint(Input.mousePosition);
-                var e = _contexts.input.CreateEntity();
-                e.AddInput(mouseWorldPos);
+                Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    var mouseWorldPos = hit.point;
+                    var e = _contexts.input.CreateEntity();
+                    e.AddInput(mouseWorldPos);
+                }
             }
         }
     }

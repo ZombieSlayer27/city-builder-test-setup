@@ -4,7 +4,6 @@ namespace Features.Player
     {
         public InventorySystems(Contexts contexts)
         {
-            Add(new InventoryInitializeSystem(contexts));
             Add(new InventoryUpdateSystem(contexts));
         }
     }

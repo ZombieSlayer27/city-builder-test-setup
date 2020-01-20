@@ -14,15 +14,15 @@ namespace Features.Transactions
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
-            context.CreateCollector(GameMatcher.MapObjectPlacement);
+            context.CreateCollector(GameMatcher.GridPosition);
 
-        protected override bool Filter(GameEntity entity) => entity.hasMapObjectPlacement;
+        protected override bool Filter(GameEntity entity) => entity.hasMapObjectPlacement && entity.hasGridPosition;
 
         protected override void Execute(List<GameEntity> entities)
         {
             foreach (var gameEntity in entities)
             {
-                var mapObjectId = gameEntity.mapObjectPlacement.Value.ToString();
+                var mapObjectId = gameEntity.mapObjectPlacement.Value;
 
                 if (ConfigHelper.TryGetConfig(mapObjectId, out var config))
                 {
@@ -31,8 +31,10 @@ namespace Features.Transactions
                     transactionEntity.isTransactionBegin = true;
                     transactionEntity.AddTransactionMapObject(gameEntity.mapObjectPlacement.Value);
                     transactionEntity.AddTransactionRequest(config.ProductionCostData);
+                    transactionEntity.AddGridPosition(gameEntity.gridPosition.Value);
+                    transactionEntity.AddMapObjectPosition(gameEntity.mapObjectPosition.Value);
                 }
-
+                _gameContext.ReplaceMapObjectPlacement(MapObject.None);
                 gameEntity.isDestroyed = true;
             }
         }

@@ -25,7 +25,7 @@ namespace Features.MapObject.Placement
         {
             foreach (var gameEntity in entities)
             {
-                var isConfigAvailable = ConfigHelper.TryGetConfig(gameEntity.transactionMapObject.MapObject.ToString(),
+                var isConfigAvailable = ConfigHelper.TryGetConfig(gameEntity.transactionMapObject.MapObject,
                     out var config);
 
                 if (isConfigAvailable)
@@ -40,6 +40,8 @@ namespace Features.MapObject.Placement
                     };
                     productionEntity.AddProduction(production);
                     productionEntity.AddConstruction(config.ProductionDelay);
+                    var asset = MapObjectHelper.GetMapObject(config);
+                    asset.transform.position = new Vector3(gameEntity.mapObjectPosition.Value.x, 0f, gameEntity.mapObjectPosition.Value.z);
 
                 }
             }
