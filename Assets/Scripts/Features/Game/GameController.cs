@@ -7,9 +7,10 @@ public class GameController
 {
     private readonly Systems _systems;
 
-    public GameController(Contexts contexts, IGameConfig gameConfig)
+    public GameController(Contexts contexts, IGameConfig gameConfig, IAssetConfig assetConfig)
     {
         contexts.config.SetGameConfig(gameConfig);
+        contexts.config.SetAssetConfig(assetConfig);
         _systems = new GameSystems(contexts);
     }
 

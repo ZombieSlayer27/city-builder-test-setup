@@ -1,5 +1,6 @@
 namespace Features.Systems
 {
+    using Input;
     using Player;
     using Transactions;
 
@@ -7,12 +8,13 @@ namespace Features.Systems
     {
         public GameSystems(Contexts contexts)
         {
+            Add(new InputSystems(contexts));
             Add(new TransactionSystems(contexts));
             Add(new InventorySystems(contexts));
             Add(new ProductionSystems(contexts));
             Add(new DecorationSystems(contexts));
             Add(new GameEventSystems(contexts));
-            Add(new GameCleanupSystems(contexts));
+            Add(new CleanupSystems(contexts));
         }
     }
 }

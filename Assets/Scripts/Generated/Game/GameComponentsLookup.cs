@@ -8,34 +8,38 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int AnyResourceUpdateListener = 0;
-    public const int DestroyedListener = 1;
-    public const int Construction = 2;
-    public const int ConstructionDone = 3;
-    public const int Destroyed = 4;
-    public const int InventoryUpdate = 5;
-    public const int MapObjectPlacement = 6;
-    public const int Player = 7;
-    public const int PlayerInventory = 8;
-    public const int Production = 9;
-    public const int ResourceUpdate = 10;
-    public const int TransactionMapObject = 11;
-    public const int TransactionRequest = 12;
-    public const int TransactionValidated = 13;
-    public const int TransactionBegin = 14;
-    public const int Transaction = 15;
-    public const int TransactionDone = 16;
-    public const int TransactionFailed = 17;
-    public const int TransactionSuccess = 18;
+    public const int AnyGameModeListener = 0;
+    public const int AnyResourceUpdateListener = 1;
+    public const int DestroyedListener = 2;
+    public const int Construction = 3;
+    public const int ConstructionDone = 4;
+    public const int Destroyed = 5;
+    public const int GameMode = 6;
+    public const int InventoryUpdate = 7;
+    public const int MapObjectPlacement = 8;
+    public const int Player = 9;
+    public const int PlayerInventory = 10;
+    public const int Production = 11;
+    public const int ResourceUpdate = 12;
+    public const int TransactionMapObject = 13;
+    public const int TransactionRequest = 14;
+    public const int TransactionValidated = 15;
+    public const int TransactionBegin = 16;
+    public const int Transaction = 17;
+    public const int TransactionDone = 18;
+    public const int TransactionFailed = 19;
+    public const int TransactionSuccess = 20;
 
-    public const int TotalComponents = 19;
+    public const int TotalComponents = 21;
 
     public static readonly string[] componentNames = {
+        "AnyGameModeListener",
         "AnyResourceUpdateListener",
         "DestroyedListener",
         "Construction",
         "ConstructionDone",
         "Destroyed",
+        "GameMode",
         "InventoryUpdate",
         "MapObjectPlacement",
         "Player",
@@ -53,11 +57,13 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AnyGameModeListenerComponent),
         typeof(AnyResourceUpdateListenerComponent),
         typeof(DestroyedListenerComponent),
         typeof(Features.Components.ConstructionComponent),
         typeof(Features.Components.ConstructionDoneComponent),
         typeof(Features.Components.DestroyedComponent),
+        typeof(Features.Components.GameModeComponent),
         typeof(Features.Components.InventoryUpdateComponent),
         typeof(Features.Components.MapObjectPlacementComponent),
         typeof(Features.Components.PlayerComponent),
