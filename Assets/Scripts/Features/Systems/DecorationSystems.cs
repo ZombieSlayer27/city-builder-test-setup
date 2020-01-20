@@ -6,8 +6,7 @@ namespace Features.Systems
     {
         public DecorationSystems(Contexts contexts)
         {
-            Add(new TreePlacementProcessSystem(contexts));
-            Add(new BenchPlacementProcessSystem(contexts));
+            Add(new DecorationPlacementProcessSystem(contexts));
         }
     }
 }

@@ -7,9 +7,7 @@ namespace Features.Systems
     {
         public ProductionSystems(Contexts contexts)
         {
-            Add(new ResidencePlacementProcessSystem(contexts));
-            Add(new WoodPlacementProcessSystem(contexts));
-            Add(new SteelPlacementProcessSystem(contexts));
+            Add(new BuildingPlacementProcessSystem(contexts));
 
             Add(new ConstructionProcessSystem(contexts));
             Add(new ProductionStartSystem(contexts));
