@@ -3,13 +3,15 @@ namespace Features.MapObject.Placement
     using System.Collections.Generic;
     using Config;
     using Entitas;
+    using UI;
+    using UI.Building;
     using UnityEngine;
 
     public class DecorationPlacementProcessSystem : ReactiveSystem<GameEntity>
     {
         private readonly GameContext _gameContext;
         private int _decorationId;
-        
+
         public DecorationPlacementProcessSystem(Contexts contexts) : base(contexts.game)
         {
             _gameContext = contexts.game;
@@ -20,7 +22,8 @@ namespace Features.MapObject.Placement
 
         protected override bool Filter(GameEntity entity) => entity.isTransactionSuccess &&
                                                              entity.hasTransactionMapObject &&
-                                                             (entity.transactionMapObject.MapObject == MapObject.Bench||
+                                                             (entity.transactionMapObject.MapObject ==
+                                                              MapObject.Bench ||
                                                               entity.transactionMapObject.MapObject == MapObject.Tree);
 
         protected override void Execute(List<GameEntity> entities)
@@ -31,7 +34,14 @@ namespace Features.MapObject.Placement
                     out var config);
                 if (isConfigAvailable)
                 {
+                    var buildingId = $"{gameEntity.transactionMapObject.MapObject} {_decorationId++}";
                     var asset = MapObjectHelper.GetMapObject(config);
+                    var buildingDecoration = asset.GetComponent<BuildingBehaviour>();
+                    if (buildingDecoration != null)
+                    {
+                        buildingDecoration.BuildingId = buildingId;
+                    }
+
                     var worldPosition = new Vector3(gameEntity.mapObjectPosition.Value.x, 0f,
                         gameEntity.mapObjectPosition.Value.z);
                     var convertedPosition = new Vector3(worldPosition.x - worldPosition.x % 10, 0,
@@ -48,8 +58,19 @@ namespace Features.MapObject.Placement
                             grids[objectGridPosition.x + i, objectGridPosition.y + j] = true;
                         }
                     }
+
+                    CreateConstructionEntity(config, buildingId);
                 }
             }
+        }
+
+        private void CreateConstructionEntity(ProductionConfig config, string buildingId)
+        {
+            var productionEntity = _gameContext.CreateEntity();
+            productionEntity.isConstruction = true;
+            productionEntity.ReplaceTimeLeft(config.ProductionDelay);
+            productionEntity.ReplaceTotalTime(config.ProductionDelay);
+            productionEntity.AddBuildingId(buildingId);
         }
     }
 }

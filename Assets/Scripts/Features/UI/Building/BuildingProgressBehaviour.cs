@@ -1,5 +1,6 @@
 namespace Features.UI
 {
+    using TMPro;
     using UnityEngine;
     using UnityEngine.UI;
 
@@ -11,7 +12,8 @@ namespace Features.UI
         [SerializeField] private GameObject productionGameObject;
         [SerializeField] private Button closeButton;
         [SerializeField] private Canvas canvas;
-
+        [SerializeField] private TextMeshProUGUI buildingIdText;
+        
         private void OnEnable()
         {
             closeButton.onClick.AddListener(OnClose);
@@ -55,6 +57,11 @@ namespace Features.UI
         public void Show(bool canShow)
         {
             gameObject.SetActive(canShow);
+        }
+
+        public void SetBuildingId(string buildingId)
+        {
+            buildingIdText.text = buildingId;
         }
     }
 }

@@ -3,15 +3,27 @@ namespace Features.UI.Building
     using UnityEngine;
 
     public class BuildingBehaviour : MonoBehaviour, IAnyProductionPercentDoneListener,
-        IAnyConstructionPercentDoneListener
+        IAnyConstructionPercentDoneListener, IAnyConstructionDoneListener
     {
         [SerializeField] private BuildingProgressBehaviour progressBehaviourPrefab;
 
         private GameEntity _productionPercentListener;
         private GameEntity _constructionPercentListener;
+        private GameEntity _constructionDoneListener;
 
         private IProgressBehaviour _progressBehaviour;
-        public string BuildingId { get; set; }
+
+        private string _buildingId;
+
+        public string BuildingId
+        {
+            private get { return _buildingId; }
+            set
+            {
+                _buildingId = value;
+                _progressBehaviour.SetBuildingId(value);
+            }
+        }
 
         private void Awake()
         {
@@ -28,18 +40,29 @@ namespace Features.UI.Building
 
             _constructionPercentListener = Contexts.sharedInstance.game.CreateEntity();
             _constructionPercentListener.AddAnyConstructionPercentDoneListener(this);
+
+            _constructionDoneListener = Contexts.sharedInstance.game.CreateEntity();
+            _constructionDoneListener.AddAnyConstructionDoneListener(this);
         }
 
         private void OnDisable()
         {
             if (_productionPercentListener != null)
             {
+                _productionPercentListener.RemoveAnyProductionPercentDoneListener(this);
                 _productionPercentListener.isDestroyed = true;
             }
 
             if (_constructionPercentListener != null)
             {
+                _constructionPercentListener.RemoveAnyConstructionPercentDoneListener(this);
                 _constructionPercentListener.isDestroyed = true;
+            }
+
+            if (_constructionDoneListener != null)
+            {
+                _constructionDoneListener.RemoveAnyConstructionDoneListener(this);
+                _constructionDoneListener.isDestroyed = true;
             }
         }
 
@@ -59,6 +82,15 @@ namespace Features.UI.Building
                 _progressBehaviour.SetConstructionPercent(value);
                 _progressBehaviour.ShowConstruction(true);
                 _progressBehaviour.ShowProduction(false);
+            }
+        }
+
+        public void OnAnyConstructionDone(GameEntity entity)
+        {
+            if (entity.isConstructionDone && entity.hasBuildingId && entity.buildingId.Value == BuildingId)
+            {
+                _progressBehaviour.ShowConstruction(false);
+                _progressBehaviour.Show(false);
             }
         }
     }

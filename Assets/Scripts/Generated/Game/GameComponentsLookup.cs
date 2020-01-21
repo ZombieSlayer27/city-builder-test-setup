@@ -8,42 +8,44 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int AnyConstructionPercentDoneListener = 0;
-    public const int AnyGameModeListener = 1;
-    public const int AnyProductionPercentDoneListener = 2;
-    public const int AnyResourceUpdateListener = 3;
-    public const int DestroyedListener = 4;
-    public const int BuildingId = 5;
-    public const int Construction = 6;
-    public const int ConstructionDone = 7;
-    public const int ConstructionPercentDone = 8;
-    public const int Destroyed = 9;
-    public const int GameMode = 10;
-    public const int Grid = 11;
-    public const int GridPosition = 12;
-    public const int InventoryUpdate = 13;
-    public const int MapObjectPlacement = 14;
-    public const int MapObjectPosition = 15;
-    public const int Player = 16;
-    public const int PlayerInventory = 17;
-    public const int Production = 18;
-    public const int ProductionPercentDone = 19;
-    public const int ProductionTime = 20;
-    public const int ResourceUpdate = 21;
-    public const int TimeLeft = 22;
-    public const int TotalTime = 23;
-    public const int TransactionMapObject = 24;
-    public const int TransactionRequest = 25;
-    public const int TransactionValidate = 26;
-    public const int TransactionBegin = 27;
-    public const int Transaction = 28;
-    public const int TransactionDone = 29;
-    public const int TransactionFailed = 30;
-    public const int TransactionSuccess = 31;
+    public const int AnyConstructionDoneListener = 0;
+    public const int AnyConstructionPercentDoneListener = 1;
+    public const int AnyGameModeListener = 2;
+    public const int AnyProductionPercentDoneListener = 3;
+    public const int AnyResourceUpdateListener = 4;
+    public const int DestroyedListener = 5;
+    public const int BuildingId = 6;
+    public const int Construction = 7;
+    public const int ConstructionDone = 8;
+    public const int ConstructionPercentDone = 9;
+    public const int Destroyed = 10;
+    public const int GameMode = 11;
+    public const int Grid = 12;
+    public const int GridPosition = 13;
+    public const int InventoryUpdate = 14;
+    public const int MapObjectPlacement = 15;
+    public const int MapObjectPosition = 16;
+    public const int Player = 17;
+    public const int PlayerInventory = 18;
+    public const int Production = 19;
+    public const int ProductionPercentDone = 20;
+    public const int ProductionTime = 21;
+    public const int ResourceUpdate = 22;
+    public const int TimeLeft = 23;
+    public const int TotalTime = 24;
+    public const int TransactionMapObject = 25;
+    public const int TransactionRequest = 26;
+    public const int TransactionValidate = 27;
+    public const int TransactionBegin = 28;
+    public const int Transaction = 29;
+    public const int TransactionDone = 30;
+    public const int TransactionFailed = 31;
+    public const int TransactionSuccess = 32;
 
-    public const int TotalComponents = 32;
+    public const int TotalComponents = 33;
 
     public static readonly string[] componentNames = {
+        "AnyConstructionDoneListener",
         "AnyConstructionPercentDoneListener",
         "AnyGameModeListener",
         "AnyProductionPercentDoneListener",
@@ -79,6 +81,7 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AnyConstructionDoneListenerComponent),
         typeof(AnyConstructionPercentDoneListenerComponent),
         typeof(AnyGameModeListenerComponent),
         typeof(AnyProductionPercentDoneListenerComponent),

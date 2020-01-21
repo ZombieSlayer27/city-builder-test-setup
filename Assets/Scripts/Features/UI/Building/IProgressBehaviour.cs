@@ -12,5 +12,7 @@ namespace Features.UI
 
         void SetCanvasCamera(Camera camera);
         void Show(bool canShow);
+
+        void SetBuildingId(string buildingId);
     }
 }

@@ -1,8 +1,9 @@
 namespace Features.Components
 {
     using Entitas;
+    using Entitas.CodeGeneration.Attributes;
 
-    [Game]
+    [Game, Event(EventTarget.Any)]
     public sealed class ConstructionDoneComponent : IComponent
     {
     }

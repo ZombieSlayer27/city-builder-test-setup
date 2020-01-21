@@ -62,7 +62,7 @@ MonoBehaviour:
       mapObject: 4
       productionResource: 0
       productionAmount: 0
-      productionDelay: 0
+      productionDelay: 10
       productionDuration: 0
       productionCostData:
       - amount: 150
@@ -77,7 +77,7 @@ MonoBehaviour:
       mapObject: 5
       productionResource: 0
       productionAmount: 0
-      productionDelay: 0
+      productionDelay: 10
       productionDuration: 0
       productionCostData:
       - amount: 50
