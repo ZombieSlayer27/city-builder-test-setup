@@ -7,10 +7,8 @@ namespace Features.UI.Building
     {
         [SerializeField] private BuildingProgressBehaviour progressBehaviourPrefab;
         [SerializeField] private Transform progressBehaviourParent;
-        
-        private GameEntity _productionPercentListener;
-        private GameEntity _constructionPercentListener;
-        private GameEntity _constructionDoneListener;
+
+        private GameEntity _listenerEntity;
 
         private IProgressBehaviour _progressBehaviour;
 
@@ -18,7 +16,7 @@ namespace Features.UI.Building
 
         public string BuildingId
         {
-            get => _buildingId; 
+            get => _buildingId;
             set
             {
                 _buildingId = value;
@@ -38,36 +36,22 @@ namespace Features.UI.Building
         {
             _progressBehaviour.Show(true);
         }
+
         private void OnEnable()
         {
-            _productionPercentListener = Contexts.sharedInstance.game.CreateEntity();
-            _productionPercentListener.AddAnyProductionPercentDoneListener(this);
-
-            _constructionPercentListener = Contexts.sharedInstance.game.CreateEntity();
-            _constructionPercentListener.AddAnyConstructionPercentDoneListener(this);
-
-            _constructionDoneListener = Contexts.sharedInstance.game.CreateEntity();
-            _constructionDoneListener.AddAnyConstructionDoneListener(this);
+            _listenerEntity = Contexts.sharedInstance.game.CreateEntity();
+            _listenerEntity.AddAnyProductionPercentDoneListener(this);
+            _listenerEntity.AddAnyConstructionPercentDoneListener(this);
+            _listenerEntity.AddAnyConstructionDoneListener(this);
         }
 
         private void OnDisable()
         {
-            if (_productionPercentListener != null)
+            if (_listenerEntity != null)
             {
-                _productionPercentListener.RemoveAnyProductionPercentDoneListener(this);
-                _productionPercentListener.isDestroyed = true;
-            }
-
-            if (_constructionPercentListener != null)
-            {
-                _constructionPercentListener.RemoveAnyConstructionPercentDoneListener(this);
-                _constructionPercentListener.isDestroyed = true;
-            }
-
-            if (_constructionDoneListener != null)
-            {
-                _constructionDoneListener.RemoveAnyConstructionDoneListener(this);
-                _constructionDoneListener.isDestroyed = true;
+                _listenerEntity.RemoveAnyProductionPercentDoneListener(this);
+                _listenerEntity.RemoveAnyConstructionPercentDoneListener(this);
+                _listenerEntity.RemoveAnyConstructionDoneListener(this);
             }
         }
 
