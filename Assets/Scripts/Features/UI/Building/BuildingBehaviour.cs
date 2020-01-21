@@ -6,7 +6,8 @@ namespace Features.UI.Building
         IAnyConstructionPercentDoneListener, IAnyConstructionDoneListener
     {
         [SerializeField] private BuildingProgressBehaviour progressBehaviourPrefab;
-
+        [SerializeField] private Transform progressBehaviourParent;
+        
         private GameEntity _productionPercentListener;
         private GameEntity _constructionPercentListener;
         private GameEntity _constructionDoneListener;
@@ -17,7 +18,7 @@ namespace Features.UI.Building
 
         public string BuildingId
         {
-            private get { return _buildingId; }
+            get => _buildingId; 
             set
             {
                 _buildingId = value;
@@ -28,11 +29,15 @@ namespace Features.UI.Building
         private void Awake()
         {
             var mainCamera = Camera.main;
-            _progressBehaviour = Instantiate(progressBehaviourPrefab, this.transform, false);
+            _progressBehaviour = Instantiate(progressBehaviourPrefab, progressBehaviourParent, false);
             _progressBehaviour.SetCanvasCamera(mainCamera);
-            _progressBehaviour.Show(true);
+            ShowProgress();
         }
 
+        public void ShowProgress()
+        {
+            _progressBehaviour.Show(true);
+        }
         private void OnEnable()
         {
             _productionPercentListener = Contexts.sharedInstance.game.CreateEntity();

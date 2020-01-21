@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5544763611306307573}
   - component: {fileID: 5544763611304994889}
   - component: {fileID: 5544763611303928871}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: House Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,9 +89,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5544763611581036912}
   - component: {fileID: 6936506325864424983}
-  m_Layer: 0
+  - component: {fileID: 4387649463710467614}
+  m_Layer: 9
   m_Name: Building3x3
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +110,7 @@ Transform:
   m_Children:
   - {fileID: 5544763612466292891}
   - {fileID: 5544763611306307573}
+  - {fileID: 4856766183648945736}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -126,6 +128,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressBehaviourPrefab: {fileID: 2683419778957687492, guid: 3c75e29800b88864aa6293fb0fdb3541,
     type: 3}
+  progressBehaviourParent: {fileID: 4856766183648945736}
+--- !u!65 &4387649463710467614
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5544763611581036915}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 32.405655, y: 31.08477, z: 29.206673}
+  m_Center: {x: 15.074463, y: 14.945515, z: -15.050251}
 --- !u!1 &5544763612466292890
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +154,7 @@ GameObject:
   - component: {fileID: 5544763612466292870}
   - component: {fileID: 5544763612466292889}
   - component: {fileID: 5544763612466292888}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bottom (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,3 +235,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7677450844322236078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4856766183648945736}
+  m_Layer: 9
+  m_Name: Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4856766183648945736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7677450844322236078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.1, y: 38, z: -14.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5544763611581036912}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

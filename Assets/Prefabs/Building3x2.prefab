@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6837885162075574407}
   - component: {fileID: 6837885162074158907}
   - component: {fileID: 6837885162073219761}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: House Medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,9 +89,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6837885162318440736}
   - component: {fileID: 3107355931377008760}
-  m_Layer: 0
+  - component: {fileID: 9122331508937848434}
+  m_Layer: 9
   m_Name: Building3x2
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +110,7 @@ Transform:
   m_Children:
   - {fileID: 6837885162669836373}
   - {fileID: 6837885162075574407}
+  - {fileID: 1548494072633955941}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -126,6 +128,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressBehaviourPrefab: {fileID: 2683419778957687492, guid: 3c75e29800b88864aa6293fb0fdb3541,
     type: 3}
+  progressBehaviourParent: {fileID: 1548494072633955941}
+--- !u!65 &9122331508937848434
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6837885162318440743}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 14, z: 20}
+  m_Center: {x: 15.25, y: 7, z: -9.14}
 --- !u!1 &6837885162669836372
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +154,7 @@ GameObject:
   - component: {fileID: 6837885162669836368}
   - component: {fileID: 6837885162669836375}
   - component: {fileID: 6837885162669836374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,3 +235,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7862742058255642249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548494072633955941}
+  m_Layer: 9
+  m_Name: Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1548494072633955941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7862742058255642249}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14, y: 20, z: -10.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6837885162318440736}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

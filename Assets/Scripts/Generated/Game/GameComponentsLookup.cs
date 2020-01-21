@@ -31,18 +31,19 @@ public static class GameComponentsLookup {
     public const int ProductionPercentDone = 20;
     public const int ProductionTime = 21;
     public const int ResourceUpdate = 22;
-    public const int TimeLeft = 23;
-    public const int TotalTime = 24;
-    public const int TransactionMapObject = 25;
-    public const int TransactionRequest = 26;
-    public const int TransactionValidate = 27;
-    public const int TransactionBegin = 28;
-    public const int Transaction = 29;
-    public const int TransactionDone = 30;
-    public const int TransactionFailed = 31;
-    public const int TransactionSuccess = 32;
+    public const int TapOnBuilding = 23;
+    public const int TimeLeft = 24;
+    public const int TotalTime = 25;
+    public const int TransactionMapObject = 26;
+    public const int TransactionRequest = 27;
+    public const int TransactionValidate = 28;
+    public const int TransactionBegin = 29;
+    public const int Transaction = 30;
+    public const int TransactionDone = 31;
+    public const int TransactionFailed = 32;
+    public const int TransactionSuccess = 33;
 
-    public const int TotalComponents = 33;
+    public const int TotalComponents = 34;
 
     public static readonly string[] componentNames = {
         "AnyConstructionDoneListener",
@@ -68,6 +69,7 @@ public static class GameComponentsLookup {
         "ProductionPercentDone",
         "ProductionTime",
         "ResourceUpdate",
+        "TapOnBuilding",
         "TimeLeft",
         "TotalTime",
         "TransactionMapObject",
@@ -104,6 +106,7 @@ public static class GameComponentsLookup {
         typeof(Features.Components.ProductionPercentDoneComponent),
         typeof(Features.Components.ProductionTimeComponent),
         typeof(Features.Components.ResourceUpdateComponent),
+        typeof(Features.Components.TapOnBuildingComponent),
         typeof(Features.Components.TimeLeftComponent),
         typeof(Features.Components.TotalTimeComponent),
         typeof(Features.Components.Transaction.TransactionMapObjectComponent),

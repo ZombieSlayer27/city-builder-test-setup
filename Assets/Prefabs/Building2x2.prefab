@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1134808358641017407}
   - component: {fileID: 1134808358638063405}
   - component: {fileID: 1134808358639164527}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 1134808358681309048}
   - component: {fileID: 1134808358681983046}
   - component: {fileID: 1134808358683112824}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 1134808358907615087}
   - component: {fileID: 1134808358908344957}
   - component: {fileID: 1134808358909438271}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 1134808358998221067}
   - component: {fileID: 1134808358995260981}
   - component: {fileID: 1134808358996359947}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 1134808359012229111}
   - component: {fileID: 1134808359013484745}
   - component: {fileID: 1134808359014614519}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 1134808359382268472}
   - component: {fileID: 1134808359382980394}
   - component: {fileID: 1134808359384007784}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 1134808359637507507}
   - component: {fileID: 1134808359638359409}
   - component: {fileID: 1134808359639412833}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Duct 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 1134808359645039251}
   - component: {fileID: 1134808359648388993}
   - component: {fileID: 1134808359647360195}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 1134808359787266312}
   - component: {fileID: 1134808359790676060}
   - component: {fileID: 1134808359789224906}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: House Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,9 +736,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1134808359842559630}
   - component: {fileID: 513710117696252396}
-  m_Layer: 0
+  - component: {fileID: 6144918317777366912}
+  m_Layer: 9
   m_Name: Building2x2
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -756,6 +757,7 @@ Transform:
   m_Children:
   - {fileID: 1134808360282885116}
   - {fileID: 1134808359787266312}
+  - {fileID: 7861580416246949764}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -773,6 +775,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressBehaviourPrefab: {fileID: 2683419778957687492, guid: 3c75e29800b88864aa6293fb0fdb3541,
     type: 3}
+  progressBehaviourParent: {fileID: 7861580416246949764}
+--- !u!65 &6144918317777366912
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134808359842559631}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18.224922, y: 20, z: 18.927391}
+  m_Center: {x: 10.669746, y: 10, z: -9.979916}
 --- !u!1 &1134808359854792506
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +800,7 @@ GameObject:
   - component: {fileID: 1134808359855049044}
   - component: {fileID: 1134808359857873990}
   - component: {fileID: 1134808359856781060}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +879,7 @@ GameObject:
   - component: {fileID: 1134808360036212518}
   - component: {fileID: 1134808360037547132}
   - component: {fileID: 1134808360038657636}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Luke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -942,7 +958,7 @@ GameObject:
   - component: {fileID: 1134808360042587577}
   - component: {fileID: 1134808360039638395}
   - component: {fileID: 1134808360040679531}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Duct 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1021,7 +1037,7 @@ GameObject:
   - component: {fileID: 1134808360072013917}
   - component: {fileID: 1134808360068671647}
   - component: {fileID: 1134808360069711247}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Duct 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,7 +1116,7 @@ GameObject:
   - component: {fileID: 1134808360142644707}
   - component: {fileID: 1134808360139826465}
   - component: {fileID: 1134808360140867633}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Duct 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1195,7 @@ GameObject:
   - component: {fileID: 1134808360176963831}
   - component: {fileID: 1134808360173558179}
   - component: {fileID: 1134808360174957109}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: House Part 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1259,7 +1275,7 @@ GameObject:
   - component: {fileID: 1134808360282885105}
   - component: {fileID: 1134808360282885118}
   - component: {fileID: 1134808360282885119}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1351,7 +1367,7 @@ GameObject:
   - component: {fileID: 1134808360288138188}
   - component: {fileID: 1134808360289035506}
   - component: {fileID: 1134808360290003404}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1419,3 +1435,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &2693479751499806637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7861580416246949764}
+  m_Layer: 9
+  m_Name: Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7861580416246949764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2693479751499806637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.7, y: 25.21, z: -7.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1134808359842559630}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

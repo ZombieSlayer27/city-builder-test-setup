@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2743647771509934933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1271033615548190449}
+  m_Layer: 9
+  m_Name: Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1271033615548190449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743647771509934933}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 30.8, z: -9.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7051956560768922038}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7051956560636453643
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +41,7 @@ GameObject:
   - component: {fileID: 7051956560636830877}
   - component: {fileID: 7051956560633458209}
   - component: {fileID: 7051956560634468735}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tree 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,9 +119,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7051956560768922038}
   - component: {fileID: 1114689256697035524}
-  m_Layer: 0
+  - component: {fileID: 1004061629204066954}
+  m_Layer: 9
   m_Name: Tree2x2
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +140,7 @@ Transform:
   m_Children:
   - {fileID: 7051956560903175723}
   - {fileID: 7051956560636830877}
+  - {fileID: 1271033615548190449}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -126,6 +158,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressBehaviourPrefab: {fileID: 2683419778957687492, guid: 3c75e29800b88864aa6293fb0fdb3541,
     type: 3}
+  progressBehaviourParent: {fileID: 1271033615548190449}
+--- !u!65 &1004061629204066954
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7051956560768922039}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.026972, y: 28.276323, z: 20.358456}
+  m_Center: {x: 10.1051, y: 14.907891, z: -9.827284}
 --- !u!1 &7051956560903175720
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +184,7 @@ GameObject:
   - component: {fileID: 7051956560903175724}
   - component: {fileID: 7051956560903175725}
   - component: {fileID: 7051956560903175722}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
