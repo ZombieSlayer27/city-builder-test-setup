@@ -1,6 +1,7 @@
 namespace Features.Systems
 {
     using Input;
+    using Player;
 
     public sealed class CleanupSystems : Feature
     {
@@ -8,6 +9,7 @@ namespace Features.Systems
         {
             Add(new DestroyInputSystem(contexts));
             Add(new DestroyGameSystem(contexts));
+            Add(new InventoryCleanupSystem(contexts));
         }
     }
 }

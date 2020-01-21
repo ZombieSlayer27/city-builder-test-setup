@@ -30,7 +30,6 @@ namespace Features.UI
 
         private void OnSelected()
         {
-            Debug.Log(_mapObjectId);
             OnBuildingSelected?.Invoke(_mapObjectId);
         }
 
