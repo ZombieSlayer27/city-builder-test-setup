@@ -14,7 +14,6 @@ namespace Features.Transactions
                 GameMatcher.TransactionFailed.Added());
 
         protected override bool Filter(GameEntity entity) => entity.isTransaction &&
-                                                             entity.isTransactionValidate &&
                                                              (entity.isTransactionSuccess ||
                                                               entity.isTransactionFailed);
 

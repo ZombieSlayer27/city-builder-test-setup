@@ -45,12 +45,17 @@ namespace Features.Transactions
                             {
                                 if (grids[gridPosition.x + i, gridPosition.y + j])
                                 {
+                                    entity.isTransactionFailed = true;
                                     return;
                                 }
                             }
                         }
 
                         entity.isTransactionValidate = true;
+                    }
+                    else
+                    {
+                        entity.isTransactionFailed = true;
                     }
                 }
             }
