@@ -25,18 +25,5 @@ namespace Features.MapObject
 
             return Vector2Int.zero;
         }
-
-        public static Vector3 ToWorldPosition(Vector2Int gridPosition)
-        {
-            var configContext = Contexts.sharedInstance.config;
-            if (configContext.hasGameConfig)
-            {
-                var gridScaleFactor = configContext.gameConfig.value.GridScaleFactor;
-                var worldPosition = new Vector3(gridPosition.x * gridScaleFactor, 0f, gridPosition.y * gridScaleFactor);
-                return worldPosition;
-            }
-
-            return Vector3.zero;
-        }
     }
 }

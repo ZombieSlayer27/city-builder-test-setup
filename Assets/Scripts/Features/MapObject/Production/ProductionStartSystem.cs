@@ -1,6 +1,7 @@
 namespace Features.MapObject.Production
 {
     using System.Collections.Generic;
+    using Config;
     using Entitas;
 
     public sealed class ProductionStartSystem : ReactiveSystem<GameEntity>
@@ -18,11 +19,19 @@ namespace Features.MapObject.Production
         {
             foreach (var entity in entities)
             {
-                entity.RemoveConstruction();
-                
+                entity.isConstruction = false;
+
                 if (entity.hasProduction && entity.production.Value.IsAuto)
                 {
-                    entity.production.Value.IsInProduction = true;
+                    var isConfigAvailable = ConfigHelper.TryGetConfig(entity.production.Value.MapObject,
+                        out var config);
+                    
+                    if (isConfigAvailable)
+                    {
+                        entity.production.Value.IsInProduction = true;
+                        entity.ReplaceTimeLeft(config.ProductionDuration);
+                        entity.ReplaceTotalTime(config.ProductionDuration);
+                    }
                 }
             }
         }

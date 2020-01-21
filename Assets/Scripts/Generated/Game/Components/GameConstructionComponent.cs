@@ -8,25 +8,25 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Features.Components.ConstructionComponent construction { get { return (Features.Components.ConstructionComponent)GetComponent(GameComponentsLookup.Construction); } }
-    public bool hasConstruction { get { return HasComponent(GameComponentsLookup.Construction); } }
+    static readonly Features.Components.ConstructionComponent constructionComponent = new Features.Components.ConstructionComponent();
 
-    public void AddConstruction(float newTimeLeft) {
-        var index = GameComponentsLookup.Construction;
-        var component = (Features.Components.ConstructionComponent)CreateComponent(index, typeof(Features.Components.ConstructionComponent));
-        component.TimeLeft = newTimeLeft;
-        AddComponent(index, component);
-    }
+    public bool isConstruction {
+        get { return HasComponent(GameComponentsLookup.Construction); }
+        set {
+            if (value != isConstruction) {
+                var index = GameComponentsLookup.Construction;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : constructionComponent;
 
-    public void ReplaceConstruction(float newTimeLeft) {
-        var index = GameComponentsLookup.Construction;
-        var component = (Features.Components.ConstructionComponent)CreateComponent(index, typeof(Features.Components.ConstructionComponent));
-        component.TimeLeft = newTimeLeft;
-        ReplaceComponent(index, component);
-    }
-
-    public void RemoveConstruction() {
-        RemoveComponent(GameComponentsLookup.Construction);
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }
 

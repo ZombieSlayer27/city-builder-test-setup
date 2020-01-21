@@ -8,7 +8,8 @@ namespace Features.MapObject.Placement
     public class DecorationPlacementProcessSystem : ReactiveSystem<GameEntity>
     {
         private readonly GameContext _gameContext;
-
+        private int _decorationId;
+        
         public DecorationPlacementProcessSystem(Contexts contexts) : base(contexts.game)
         {
             _gameContext = contexts.game;
@@ -31,8 +32,11 @@ namespace Features.MapObject.Placement
                 if (isConfigAvailable)
                 {
                     var asset = MapObjectHelper.GetMapObject(config);
-                    asset.transform.position = new Vector3(gameEntity.mapObjectPosition.Value.x, 0f,
+                    var worldPosition = new Vector3(gameEntity.mapObjectPosition.Value.x, 0f,
                         gameEntity.mapObjectPosition.Value.z);
+                    var convertedPosition = new Vector3(worldPosition.x - worldPosition.x % 10, 0,
+                        worldPosition.z - worldPosition.z % 10);
+                    asset.transform.position = convertedPosition;
 
                     var grids = _gameContext.grid.Value;
                     var assetSize = config.MapObjectSize;

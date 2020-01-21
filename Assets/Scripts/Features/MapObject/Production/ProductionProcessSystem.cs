@@ -20,20 +20,22 @@ namespace Features.MapObject.Production
             foreach (var productionEntity in _productions)
             {
                 var production = productionEntity.production.Value;
-                if (production.IsInProduction && productionEntity.isConstructionDone)
+                if (production.IsInProduction && productionEntity.isConstructionDone && productionEntity.hasTimeLeft && productionEntity.hasTotalTime)
                 {
                     var isConfigAvailable = ConfigHelper.TryGetConfig(production.MapObject, out var config);
                     if (isConfigAvailable)
                     {
-                        if (production.TimeLeft > 0)
+                        if (productionEntity.timeLeft.Value > 0)
                         {
-                            production.TimeLeft -= Time.deltaTime;
+                            var timeLeft = productionEntity.timeLeft.Value- Time.deltaTime;
+                            productionEntity.ReplaceTimeLeft(timeLeft);
+                            productionEntity.ReplaceProductionPercentDone(timeLeft/productionEntity.totalTime.Value);
                         }
                         else
                         {
-                            _gameContext.CreateEntity().AddInventoryUpdate(config.ProductionResource,
-                                config.ProductionAmount);
-                            production.TimeLeft = config.ProductionDuration;
+                            _gameContext.CreateEntity().AddInventoryUpdate(config.ProductionResource, config.ProductionAmount);
+                            productionEntity.ReplaceTimeLeft(config.ProductionDuration);
+                            productionEntity.ReplaceProductionPercentDone(1);
                             production.IsInProduction = true;
                         }
                     }

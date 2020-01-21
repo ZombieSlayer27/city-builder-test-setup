@@ -735,6 +735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1134808359842559630}
+  - component: {fileID: 513710117696252396}
   m_Layer: 0
   m_Name: Building2x2
   m_TagString: Untagged
@@ -758,6 +759,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &513710117696252396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134808359842559631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b4c7241a064a6a8665e0f667e4be9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressBehaviourPrefab: {fileID: 2683419778957687492, guid: 3c75e29800b88864aa6293fb0fdb3541,
+    type: 3}
 --- !u!1 &1134808359854792506
 GameObject:
   m_ObjectHideFlags: 0

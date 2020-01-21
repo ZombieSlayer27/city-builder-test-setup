@@ -88,6 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7051956560768922038}
+  - component: {fileID: 1114689256697035524}
   m_Layer: 0
   m_Name: Tree2x2
   m_TagString: Untagged
@@ -111,6 +112,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1114689256697035524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7051956560768922039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b4c7241a064a6a8665e0f667e4be9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressBehaviourPrefab: {fileID: 2683419778957687492, guid: 3c75e29800b88864aa6293fb0fdb3541,
+    type: 3}
 --- !u!1 &7051956560903175720
 GameObject:
   m_ObjectHideFlags: 0

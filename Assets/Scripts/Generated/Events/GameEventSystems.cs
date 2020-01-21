@@ -9,8 +9,10 @@
 public sealed class GameEventSystems : Feature {
 
     public GameEventSystems(Contexts contexts) {
+        Add(new AnyConstructionPercentDoneEventSystem(contexts)); // priority: 0
         Add(new DestroyedEventSystem(contexts)); // priority: 0
         Add(new AnyGameModeEventSystem(contexts)); // priority: 0
+        Add(new AnyProductionPercentDoneEventSystem(contexts)); // priority: 0
         Add(new AnyResourceUpdateEventSystem(contexts)); // priority: 0
     }
 }

@@ -21,15 +21,20 @@ namespace Features.MapObject.Production
                     continue;
                 }
 
-                var timeLeft = constructionEntity.construction.TimeLeft;
-                if (timeLeft > 0)
+                if (constructionEntity.hasTimeLeft && constructionEntity.hasTotalTime)
                 {
-                    timeLeft -= Time.deltaTime;
-                    constructionEntity.ReplaceConstruction(timeLeft);
-                }
-                else
-                {
-                    constructionEntity.isConstructionDone = true;
+                    var timeLeft = constructionEntity.timeLeft.Value;
+                    if (timeLeft > 0)
+                    {
+                        timeLeft -= Time.deltaTime;
+                        constructionEntity.ReplaceTimeLeft(timeLeft);
+                        constructionEntity.ReplaceConstructionPercentDone(
+                            timeLeft / constructionEntity.totalTime.Value);
+                    }
+                    else
+                    {
+                        constructionEntity.isConstructionDone = true;
+                    }
                 }
             }
         }

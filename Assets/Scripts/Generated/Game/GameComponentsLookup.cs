@@ -8,39 +8,51 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int AnyGameModeListener = 0;
-    public const int AnyResourceUpdateListener = 1;
-    public const int DestroyedListener = 2;
-    public const int Construction = 3;
-    public const int ConstructionDone = 4;
-    public const int Destroyed = 5;
-    public const int GameMode = 6;
-    public const int Grid = 7;
-    public const int GridPosition = 8;
-    public const int InventoryUpdate = 9;
-    public const int MapObjectPlacement = 10;
-    public const int MapObjectPosition = 11;
-    public const int Player = 12;
-    public const int PlayerInventory = 13;
-    public const int Production = 14;
-    public const int ResourceUpdate = 15;
-    public const int TransactionMapObject = 16;
-    public const int TransactionRequest = 17;
-    public const int TransactionValidate = 18;
-    public const int TransactionBegin = 19;
-    public const int Transaction = 20;
-    public const int TransactionDone = 21;
-    public const int TransactionFailed = 22;
-    public const int TransactionSuccess = 23;
+    public const int AnyConstructionPercentDoneListener = 0;
+    public const int AnyGameModeListener = 1;
+    public const int AnyProductionPercentDoneListener = 2;
+    public const int AnyResourceUpdateListener = 3;
+    public const int DestroyedListener = 4;
+    public const int BuildingId = 5;
+    public const int Construction = 6;
+    public const int ConstructionDone = 7;
+    public const int ConstructionPercentDone = 8;
+    public const int Destroyed = 9;
+    public const int GameMode = 10;
+    public const int Grid = 11;
+    public const int GridPosition = 12;
+    public const int InventoryUpdate = 13;
+    public const int MapObjectPlacement = 14;
+    public const int MapObjectPosition = 15;
+    public const int Player = 16;
+    public const int PlayerInventory = 17;
+    public const int Production = 18;
+    public const int ProductionPercentDone = 19;
+    public const int ProductionTime = 20;
+    public const int ResourceUpdate = 21;
+    public const int TimeLeft = 22;
+    public const int TotalTime = 23;
+    public const int TransactionMapObject = 24;
+    public const int TransactionRequest = 25;
+    public const int TransactionValidate = 26;
+    public const int TransactionBegin = 27;
+    public const int Transaction = 28;
+    public const int TransactionDone = 29;
+    public const int TransactionFailed = 30;
+    public const int TransactionSuccess = 31;
 
-    public const int TotalComponents = 24;
+    public const int TotalComponents = 32;
 
     public static readonly string[] componentNames = {
+        "AnyConstructionPercentDoneListener",
         "AnyGameModeListener",
+        "AnyProductionPercentDoneListener",
         "AnyResourceUpdateListener",
         "DestroyedListener",
+        "BuildingId",
         "Construction",
         "ConstructionDone",
+        "ConstructionPercentDone",
         "Destroyed",
         "GameMode",
         "Grid",
@@ -51,7 +63,11 @@ public static class GameComponentsLookup {
         "Player",
         "PlayerInventory",
         "Production",
+        "ProductionPercentDone",
+        "ProductionTime",
         "ResourceUpdate",
+        "TimeLeft",
+        "TotalTime",
         "TransactionMapObject",
         "TransactionRequest",
         "TransactionValidate",
@@ -63,11 +79,15 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AnyConstructionPercentDoneListenerComponent),
         typeof(AnyGameModeListenerComponent),
+        typeof(AnyProductionPercentDoneListenerComponent),
         typeof(AnyResourceUpdateListenerComponent),
         typeof(DestroyedListenerComponent),
+        typeof(Features.Components.BuildingIdComponent),
         typeof(Features.Components.ConstructionComponent),
         typeof(Features.Components.ConstructionDoneComponent),
+        typeof(Features.Components.ConstructionPercentDoneComponent),
         typeof(Features.Components.DestroyedComponent),
         typeof(Features.Components.GameModeComponent),
         typeof(Features.Components.GridComponent),
@@ -78,7 +98,11 @@ public static class GameComponentsLookup {
         typeof(Features.Components.PlayerComponent),
         typeof(Features.Components.PlayerInventoryComponent),
         typeof(Features.Components.ProductionComponent),
+        typeof(Features.Components.ProductionPercentDoneComponent),
+        typeof(Features.Components.ProductionTimeComponent),
         typeof(Features.Components.ResourceUpdateComponent),
+        typeof(Features.Components.TimeLeftComponent),
+        typeof(Features.Components.TotalTimeComponent),
         typeof(Features.Components.Transaction.TransactionMapObjectComponent),
         typeof(Features.Components.Transaction.TransactionRequestComponent),
         typeof(Features.Components.Transaction.TransactionValidateComponent),
