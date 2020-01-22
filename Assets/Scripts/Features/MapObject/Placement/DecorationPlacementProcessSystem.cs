@@ -3,8 +3,7 @@ namespace Features.MapObject.Placement
     using System.Collections.Generic;
     using Config;
     using Entitas;
-    using UI;
-    using UI.Building;
+    using Game;
     using UnityEngine;
 
     public class DecorationPlacementProcessSystem : ReactiveSystem<GameEntity>
@@ -30,47 +29,19 @@ namespace Features.MapObject.Placement
         {
             foreach (var gameEntity in entities)
             {
-                var isConfigAvailable = ConfigHelper.TryGetConfig(gameEntity.transactionMapObject.MapObject,
-                    out var config);
+                var mapObject = gameEntity.transactionMapObject.MapObject;
+                var isConfigAvailable = ConfigHelper.TryGetConfig(mapObject, out var config);
                 if (isConfigAvailable)
                 {
-                    var buildingId = $"{gameEntity.transactionMapObject.MapObject} {_decorationId++}";
-                    var asset = MapObjectHelper.GetMapObject(config);
-                    var buildingDecoration = asset.GetComponent<BuildingBehaviour>();
-                    if (buildingDecoration != null)
-                    {
-                        buildingDecoration.BuildingId = buildingId;
-                    }
-
+                    var buildingId = $"{mapObject} {_decorationId++}";
                     var worldPosition = new Vector3(gameEntity.mapObjectPosition.Value.x, 0f,
                         gameEntity.mapObjectPosition.Value.z);
-                    var convertedPosition = new Vector3(worldPosition.x - worldPosition.x % 10, 0,
-                        worldPosition.z - worldPosition.z % 10);
-                    asset.transform.position = convertedPosition;
+                    MapObjectHelper.SetMapObjectWithIdAt(config, buildingId,
+                        worldPosition);
 
-                    var grids = _gameContext.grid.Value;
-                    var assetSize = config.MapObjectSize;
-                    var objectGridPosition = gameEntity.gridPosition.Value;
-                    for (int i = 0; i < assetSize.x; i++)
-                    {
-                        for (int j = 0; j < assetSize.y; j++)
-                        {
-                            grids[objectGridPosition.x + i, objectGridPosition.y + j] = true;
-                        }
-                    }
-
-                    CreateConstructionEntity(config, buildingId);
+                    _gameContext.CreateConstructionEntity(config, buildingId);
                 }
             }
-        }
-
-        private void CreateConstructionEntity(ProductionConfig config, string buildingId)
-        {
-            var productionEntity = _gameContext.CreateEntity();
-            productionEntity.isConstruction = true;
-            productionEntity.ReplaceTimeLeft(config.ProductionDelay);
-            productionEntity.ReplaceTotalTime(config.ProductionDelay);
-            productionEntity.AddBuildingId(buildingId);
         }
     }
 }

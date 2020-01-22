@@ -1,14 +1,14 @@
 namespace Features.MapObject
 {
     using Config;
+    using UI.Building;
     using UnityEngine;
 
     public static class MapObjectHelper
     {
-        public static GameObject GetMapObject(ProductionConfig config)
+        private static GameObject GetMapObject(GameObject assetObject)
         {
-            var assetPrefab = config.MapObjectAsset;
-            return GameObject.Instantiate(assetPrefab);
+            return GameObject.Instantiate(assetObject);
         }
 
         public static Vector2Int ToGridPosition(Vector3 worldPosition)
@@ -24,6 +24,20 @@ namespace Features.MapObject
             }
 
             return Vector2Int.zero;
+        }
+
+        public static void SetMapObjectWithIdAt(ProductionConfig config, string buildingId, Vector3 worldPosition)
+        {
+            var asset = GetMapObject(config.MapObjectAsset);
+            var buildingDecoration = asset.GetComponent<BuildingBehaviour>();
+            if (buildingDecoration != null)
+            {
+                buildingDecoration.BuildingId = buildingId;
+
+                var convertedPosition = new Vector3(worldPosition.x - worldPosition.x % 10, 0,
+                    worldPosition.z - worldPosition.z % 10);
+                asset.transform.position = convertedPosition;
+            }
         }
     }
 }
